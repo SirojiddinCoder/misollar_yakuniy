@@ -34,3 +34,23 @@ let s=0;
     else{
         console.log(true);
     }
+const myfunc = (arr, num) => {
+    let sum = 0;
+    let k = 0;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 1; j < arr.length; j++) {
+        if(arr[i] % num == 0){
+            sum += arr[i];
+            console.log(sum);
+            k++;
+        }else{
+            sum += arr[j] ;
+            (sum / (j+1)) == num && k++;
+            console.log(sum);
+        }
+    }
+  }
+  console.log(k);
+};
+
+myfunc([1,3,2,2],2);
