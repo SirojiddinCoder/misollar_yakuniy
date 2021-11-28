@@ -55,21 +55,56 @@
 
 // myfunc([1,3,2,2],2);
 
-function getData(arr, num) {
-    let count = 0;
-    let sum = 0;
+// function getData(arr, num) {
+//     let count = 0;
+//     let sum = 0;
 
-    for (i = 0; i < arr.length; i++) {
-        for (j = i; j < arr.length; j++) {
-            sum += arr[j]
+//     for (i = 0; i < arr.length; i++) {
+//         for (j = i; j < arr.length; j++) {
+//             sum += arr[j]
 
-            if (sum / (j - i + 1) == num) {
-                count++;
-                console.log(sum,  (j - i + 1));
+//             if (sum / (j - i + 1) == num) {
+//                 count++;
+//                 console.log(sum,  (j - i + 1));
+//             }
+//         }
+//         sum = 0;
+//     }
+//     console.log(count);
+// }
+// getData([1, 3, 2, 2], 2);
+
+const myData = (res) => {
+
+    var data = [
+        {
+            id: 1,
+            name : "Asad",
+            status : "Students",
+            fruit : 'apple'
+        },
+        {
+            id: 1,
+            name : "Anvar",
+            status : "Students",
+            fruit : 'apple'
+        },
+
+    ]
+    k=0;
+    data.map((value)=>{
+        let arr = Object.values(value);
+        arr.map((item)=>{
+            for (let i = 0; i < item.length; i++) {
+
+               if(item[i].toLowerCase()==res){
+                   k++;
+               }
+
             }
-        }
-        sum = 0;
-    }
-    console.log(count);
-}
-getData([1, 3, 2, 2], 2);
+        })
+    })
+
+console.log(k);
+};
+myData('a');
